@@ -13,6 +13,9 @@ This module assumes you have received an access token from the Cisco Spark Oauth
 
 ## The  Cisco Spark Client Library Functions
 
+### Pagination
+All list api function calls support pagination. To get the next page of results, simply call the list specific list function with 'next' as the first parameter.  Examples below.
+
 ### Create the Spark Client object
 
 #### CiscoSparkClient(accessToken)
@@ -33,6 +36,10 @@ Rooms are virtual meeting place where people post messages and collaborate to ge
                 console.log(rooms.items[i].created)
                 console.log(rooms.items[i].lastActivity)
             }
+            //get the next 5 rooms
+            sparkClient.listRoom("next", function(err, rooms) {
+              /... do domething here
+            })
     })
 ```
 
@@ -94,6 +101,10 @@ Messages are how we communicate in a room. In Spark, each message is displayed o
                 console.log(messages.items[i].created)
                 console.log(messages.items[i].text)
             }
+             //support for pagination
+             sparkClient.listMessages("next",function(err,messages){
+                // do something here
+             })
     })
 ```
 
@@ -153,6 +164,12 @@ sparkClient.listPeople("marcello",2,function(err,people){
             console.log(people.items[i].created)
 
           }
+
+        //support for pagination
+        sparkClient.listPeople("next",function(err,people){
+           // do something here
+        })
+
 })
 ```
 #### CiscoSparkClient.getPerson(personId, callback)
@@ -204,6 +221,10 @@ sparkClient.listMemberships("Y2lzY29zcGFyazovL3VzL1JPT00vZjcwZjQ0ODAtYTA1Ny0xMWU
             console.log(memberships.items[i].isMonitor)
             console.log(memberships.items[i].created)
         }
+        //support for pagination
+        sparkClient.listMemberships("next",function(err,memberships){
+           // do something here
+        })
 
 })
 ```
@@ -263,7 +284,7 @@ sparkClient.deleteRoom("Y2lzY29zcGFyazovL3VzL01FTUJFUlNISVAvNzNmMDU4YmUtNTE0Yy00
 ### Webhook Functions
 Webhooks allow your app to be notified via HTTP when a specific event occurs on Spark. For example, your app can register a webhook to be notified when a new message is posted into a specific room.
 Events trigger in near real-time allowing your app and backend IT systems to stay in sync with new content and room activity.
-#### CiscoSparkClient.prototype.listWebhooks(max, callback)
+#### CiscoSparkClient.listWebhooks(max, callback)
 ```javascript
 sparkClient.listWebhooks(5, function(err, webhooks) {
     if (!err)
@@ -275,6 +296,11 @@ sparkClient.listWebhooks(5, function(err, webhooks) {
             console.log(webhooks.items[i].targetUrl)
             console.log(webhooks.items[i].filter)
         }
+        //support for pagination
+        sparkClient.listWebhooks("next",function(err,webhooks){
+           // do something here
+        })
+
 
 })
 ```
