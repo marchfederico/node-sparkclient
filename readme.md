@@ -14,7 +14,7 @@ This module assumes you have received an access token from the Cisco Spark Oauth
 ## The  Cisco Spark Client Library Functions
 
 ### Pagination
-All list api function calls support pagination. To get the next page of results, simply call the list specific list function with 'next' as the first parameter.  Examples below.
+All list api function calls support pagination. To get the next page of results, simply call the specific list function with 'next' as the first parameter.  Examples below.
 
 ### Create the Spark Client object
 
