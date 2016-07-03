@@ -137,6 +137,11 @@ Messages are how we communicate in a room. In Spark, each message is displayed o
             console.log(message.personEmail)
             console.log(message.created)
             console.log(message.text)
+            //If Spark message contains files, message.files will be an array of URLs to the documents
+            if (message.files) {
+                console.log(message.files)
+                fileURL = message.files[0]
+            }
         }
    })
 ```
@@ -148,6 +153,37 @@ Messages are how we communicate in a room. In Spark, each message is displayed o
             console.log(response.message)
     })
 ```
+
+#### CiscoSparkClient.getFile(fileURL, callback)
+```javascript
+    // Get filename and filedata from a file URL returned by the getMessage function  
+	sparkClient.getFile("https://api.ciscospark.com/v1/contents/Y2lzY29zcGFyazovL3VzL0NPTlRFTlQvMDVmOGMwNDAtNDFiNy0xMmY1LTc0NDctOWM3ZTQ5M2U2MzJiLzA", function (err, filename, filedata) {
+    	if (err) {
+    		console.log(err)
+    	}
+    	else {
+    		console.log(filename)
+    		path = 'files/'+filename
+    		fs.writeFileSync(path,filedata)
+    	}
+    })
+```
+
+#### CiscoSparkClient.getFilename(fileURL, callback)
+```javascript
+    // To save bandwidth and performance, get filename without actually retrieving the file, from a file URL returned by the getMessage function i.e. when you want to see the file extension within the filename
+    sparkClient.getFilename("https://api.ciscospark.com/v1/contents/Y2lzY29zcGFyazovL3VzL0NPTlRFTlQvMDVmOGMwNDAtNDFiNy0xMmY1LTc0NDctOWM3ZTQ5M2U2MzJiLzA", function (err, filename) 
+    {
+    	if (err) {
+    		console.log(err)
+    	}
+    	else {
+    		console.log(filename)
+    	}
+    })
+```
+
+
 
 ---
 ### People Functions
