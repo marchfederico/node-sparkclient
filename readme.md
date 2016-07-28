@@ -129,6 +129,9 @@ If creating a message is successful, a response object will be returned containi
     messageParams = {}  // Message Parameters are optional
     messageParams.file = 'https://web.ciscospark.com/images/logo_spark_256px.png'  // The file to attach to the message
 
+    //To set the type of your messageText to HTML or Markdown set messageParams.html messageParams.markdown to true.  If both are set, message will be sent as markdown.
+    //messageParams.html = true
+
     // for a direct 1:1 message just use the users email address as the first parameter or person id
     sparkClient.createMessage('marfeder@cisco.com', 'Hello!', messageParams, function(err, response) {
         if (!err)
