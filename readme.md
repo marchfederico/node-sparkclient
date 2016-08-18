@@ -179,7 +179,7 @@ If creating a message is successful, a response object will be returned containi
 #### CiscoSparkClient.getFile(fileURL, callback)
 ```javascript
     // Get fileInfo and fileData from a file URL returned by the getMessage function.  fileInfo is a JSON object containing the fileName, contentType, and contentLength in bits.  fileData is a buffer object containing the unencoded binary data.
-	sparkClient.getFile("https://api.ciscospark.com/v1/contents/Y2lzY29zcGFyazovL3VzL0NPTlRFTlQvMDVmOGMwNDAtNDFiNy0xMmY1LTc0NDctOWM3ZTQ5M2U2MzJiLzA", function (err, fileName, fileData) {
+	sparkClient.getFile("https://api.ciscospark.com/v1/contents/Y2lzY29zcGFyazovL3VzL0NPTlRFTlQvMDVmOGMwNDAtNDFiNy0xMmY1LTc0NDctOWM3ZTQ5M2U2MzJiLzA", function (err, fileInfo, fileData) {
     	if (!err) {
             console.log(fileInfo.fileName)
             console.log(fileInfo.contentType)
