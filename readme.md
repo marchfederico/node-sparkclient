@@ -1,4 +1,4 @@
-Node Cisco Spark
+Node Cisco Spark Client
 ===========================================
 
 [node-sparkclient](https://github.com/marchfederico/node-sparkclient) is node Cisco Spark module. It provides a simple way to work with the Cisco Spark APIs
