@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "A Simple Cisco Spark Library  ",
   "main": "index.js",
+  "repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/marchfederico/node-sparkclient.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
