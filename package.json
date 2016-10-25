@@ -11,7 +11,7 @@
     "Spark"
   ],
   "author": "Marcello Federico",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "request": "^2.67.0"
   }
