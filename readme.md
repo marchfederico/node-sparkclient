@@ -1,11 +1,11 @@
 Node Cisco Spark
 ===========================================
 
-[node-ciscospark](https://github.com/marchfederico/node-ciscospark) is node Cisco Spark module. It provides a simple way to work with the Cisco Spark APIs
+[node-sparkclient](https://github.com/marchfederico/node-sparkclient) is node Cisco Spark module. It provides a simple way to work with the Cisco Spark APIs
 
 ## Installation
 
-`npm install node-ciscospark`
+`npm install node-sparkclient`
 
 ## Usage
 
