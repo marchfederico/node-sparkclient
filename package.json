@@ -1,8 +1,12 @@
 {
   "name": "node-sparkclient",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "description": "A Simple Cisco Spark Library  ",
   "main": "index.js",
+  "repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/marchfederico/node-sparkclient.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +15,10 @@
     "Spark"
   ],
   "author": "Marcello Federico",
-  "license": "ISC",
+   "contributors": [
+       {"name": "Casey Bleeker", "email": "casey@geekbleek.com"}   
+    ],
+  "license": "MIT",
   "dependencies": {
     "request": "^2.67.0"
   }
