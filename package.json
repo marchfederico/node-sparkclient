@@ -1,5 +1,5 @@
 {
-  "name": "node-ciscospark",
+  "name": "node-sparkclient",
   "version": "0.1.0",
   "description": "A Simple Cisco Spark Library  ",
   "main": "index.js",
