@@ -127,7 +127,13 @@ Messages are how we communicate in a room. In Spark, each message is displayed o
 If creating a message is successful, a response object will be returned containing the message parameters returned above for listMessages
 ```javascript
     messageParams = {}  // Message Parameters are optional
-    messageParams.file = 'https://web.ciscospark.com/images/logo_spark_256px.png'  // The file to attach to the message
+    messageParams.file = 'https://web.ciscospark.com/images/logo_spark_256px.png'  // The file to attach to the message.  
+
+    //You can also directly upload a file by passing in a file buffer, in which case the returned Spark response will include the file ID. When directly uploading a file you must specify a filename.
+
+    var data = fs.readFileSync('document.xlsx');
+    messageParams.file = data
+    messageParams.filename = 'My uploaded file.xlsx'
 
     //To set the type of your messageText to HTML or Markdown set messageParams.html messageParams.markdown to true.  If both are set, message will be sent as markdown.
     //messageParams.html = true
@@ -179,7 +185,7 @@ If creating a message is successful, a response object will be returned containi
 #### CiscoSparkClient.getFile(fileURL, callback)
 ```javascript
     // Get fileInfo and fileData from a file URL returned by the getMessage function.  fileInfo is a JSON object containing the fileName, contentType, and contentLength in bits.  fileData is a buffer object containing the unencoded binary data.
-	sparkClient.getFile("https://api.ciscospark.com/v1/contents/Y2lzY29zcGFyazovL3VzL0NPTlRFTlQvMDVmOGMwNDAtNDFiNy0xMmY1LTc0NDctOWM3ZTQ5M2U2MzJiLzA", function (err, fileName, fileData) {
+	sparkClient.getFile("https://api.ciscospark.com/v1/contents/Y2lzY29zcGFyazovL3VzL0NPTlRFTlQvMDVmOGMwNDAtNDFiNy0xMmY1LTc0NDctOWM3ZTQ5M2U2MzJiLzA", function (err, fileInfo, fileData) {
     	if (!err) {
             console.log(fileInfo.fileName)
             console.log(fileInfo.contentType)
