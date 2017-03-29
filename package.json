@@ -1,6 +1,6 @@
 {
   "name": "node-sparkclient",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A Simple Cisco Spark Library  ",
   "main": "index.js",
   "repository" :
